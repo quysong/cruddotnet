@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebApplication1ModelStoreContainer" CdmEntityContainer="WebApplication1Entities">
+    <EntitySetMapping Name="admin_account">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_account">
+        <MappingFragment StoreEntitySet="admin_account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="landangnhapcuoi" ColumnName="landangnhapcuoi" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="quyen" ColumnName="quyen" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_baivietlienhe">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_baivietlienhe">
+        <MappingFragment StoreEntitySet="admin_baivietlienhe">
+          <ScalarProperty Name="noidung_en" ColumnName="noidung_en" />
+          <ScalarProperty Name="tenbailienhe_en" ColumnName="tenbailienhe_en" />
+          <ScalarProperty Name="thutuhienthi" ColumnName="thutuhienthi" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenbailienhe" ColumnName="tenbailienhe" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_gioithieu">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_gioithieu">
+        <MappingFragment StoreEntitySet="admin_gioithieu">
+          <ScalarProperty Name="noidung_en" ColumnName="noidung_en" />
+          <ScalarProperty Name="tenbaigioithieu_en" ColumnName="tenbaigioithieu_en" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenbaigioithieu" ColumnName="tenbaigioithieu" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+          <ScalarProperty Name="thutuhienthi" ColumnName="thutuhienthi" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_hanhtrinh">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_hanhtrinh">
+        <MappingFragment StoreEntitySet="admin_hanhtrinh">
+          <ScalarProperty Name="diadiem_en" ColumnName="diadiem_en" />
+          <ScalarProperty Name="noidung_en" ColumnName="noidung_en" />
+          <ScalarProperty Name="motasoluoc_en" ColumnName="motasoluoc_en" />
+          <ScalarProperty Name="tenhanhtrinh_en" ColumnName="tenhanhtrinh_en" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenhanhtrinh" ColumnName="tenhanhtrinh" />
+          <ScalarProperty Name="loaihanhtrinh" ColumnName="loaihanhtrinh" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="motasoluoc" ColumnName="motasoluoc" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thongtinthoigian" ColumnName="thongtinthoigian" />
+          <ScalarProperty Name="thongtindiadiem" ColumnName="thongtindiadiem" />
+          <ScalarProperty Name="hinhdaidien" ColumnName="hinhdaidien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_hinhanh">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_hinhanh">
+        <MappingFragment StoreEntitySet="admin_hinhanh">
+          <ScalarProperty Name="thutuhien" ColumnName="thutuhien" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenhinhanh" ColumnName="tenhinhanh" />
+          <ScalarProperty Name="urlhinhanh" ColumnName="urlhinhanh" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="loaihinhanh" ColumnName="loaihinhanh" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_loaihanhtrinh">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_loaihanhtrinh">
+        <MappingFragment StoreEntitySet="admin_loaihanhtrinh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenloaihanhtrinh" ColumnName="tenloaihanhtrinh" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_loaihinhanh">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_loaihinhanh">
+        <MappingFragment StoreEntitySet="admin_loaihinhanh">
+          <ScalarProperty Name="motahinhanh_en" ColumnName="motahinhanh_en" />
+          <ScalarProperty Name="tenloaihinhanh_en" ColumnName="tenloaihinhanh_en" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenloaihinhanh" ColumnName="tenloaihinhanh" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="motahinhanh" ColumnName="motahinhanh" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_loaitintuc">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_loaitintuc">
+        <MappingFragment StoreEntitySet="admin_loaitintuc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenloaitintuc" ColumnName="tenloaitintuc" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="hinhanhtintuc" ColumnName="hinhanhtintuc" />
+          <ScalarProperty Name="motasoluoc" ColumnName="motasoluoc" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_nhomthanhvien">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_nhomthanhvien">
+        <MappingFragment StoreEntitySet="admin_nhomthanhvien">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tennhomthanhvien" ColumnName="tennhomthanhvien" />
+          <ScalarProperty Name="motanhom" ColumnName="motanhom" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="hinhdaidien" ColumnName="hinhdaidien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_thanhvien">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_thanhvien">
+        <MappingFragment StoreEntitySet="admin_thanhvien">
+          <ScalarProperty Name="thutuhienthi" ColumnName="thutuhienthi" />
+          <ScalarProperty Name="chitiet_en" ColumnName="chitiet_en" />
+          <ScalarProperty Name="motasoluoc_en" ColumnName="motasoluoc_en" />
+          <ScalarProperty Name="tenthanhvien_en" ColumnName="tenthanhvien_en" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenthanhvien" ColumnName="tenthanhvien" />
+          <ScalarProperty Name="motasoluoc" ColumnName="motasoluoc" />
+          <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+          <ScalarProperty Name="urlhinhanh" ColumnName="urlhinhanh" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="nhomthanhvien" ColumnName="nhomthanhvien" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_thongtincodinh">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_thongtincodinh">
+        <MappingFragment StoreEntitySet="admin_thongtincodinh">
+          <ScalarProperty Name="baiviettrangchu_en" ColumnName="baiviettrangchu_en" />
+          <ScalarProperty Name="diachi_en" ColumnName="diachi_en" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="diachigmap" ColumnName="diachigmap" />
+          <ScalarProperty Name="baiviettrangchu" ColumnName="baiviettrangchu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_tintuc">
+      <EntityTypeMapping TypeName="WebApplication1Model.admin_tintuc">
+        <MappingFragment StoreEntitySet="admin_tintuc">
+          <ScalarProperty Name="motasoluoc_en" ColumnName="motasoluoc_en" />
+          <ScalarProperty Name="noidungtintuc_en" ColumnName="noidungtintuc_en" />
+          <ScalarProperty Name="tentintuc_en" ColumnName="tentintuc_en" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tentintuc" ColumnName="tentintuc" />
+          <ScalarProperty Name="loaitintuc" ColumnName="loaitintuc" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="motasoluoc" ColumnName="motasoluoc" />
+          <ScalarProperty Name="noidungtintuc" ColumnName="noidungtintuc" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+          <ScalarProperty Name="hinhdaidien" ColumnName="hinhdaidien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="banners">
+      <EntityTypeMapping TypeName="WebApplication1Model.banner">
+        <MappingFragment StoreEntitySet="banner">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenbanner" ColumnName="tenbanner" />
+          <ScalarProperty Name="urlbanner" ColumnName="urlbanner" />
+          <ScalarProperty Name="motabanner" ColumnName="motabanner" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="hienthi" ColumnName="hienthi" />
+          <ScalarProperty Name="thutuhien" ColumnName="thutuhien" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+          <ScalarProperty Name="loaibanner" ColumnName="loaibanner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loaibanners">
+      <EntityTypeMapping TypeName="WebApplication1Model.loaibanner">
+        <MappingFragment StoreEntitySet="loaibanner">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenloaibanner" ColumnName="tenloaibanner" />
+          <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

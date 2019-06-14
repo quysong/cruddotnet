@@ -1,0 +1,229 @@
+﻿<!-- == jQuery Librery == -->
+<script src="~/js/jquery-2.2.4.min.js"></script>
+<!-- == Bootsrap js File == -->
+<script src="~/js/bootstrap.min.js"></script>
+<!-- == mixitup == -->
+<script src="~/js/mixitup.min.js"></script>
+<!-- == Select 2 == -->
+<script src="~/js/select2.min.js"></script>
+<!-- == Gallery popup == -->
+<script src="~/js/jquery.colorbox-min.js"></script>
+<!-- == Image Lazy Load == -->
+<script src="~/js/jquery.lazy.min.js"></script>
+<!-- == Slick == -->
+<script src="~/js/slick.min.js"></script>
+<!-- == Counter == -->
+<script src="~/js/jquery.waypoints.min.js"></script>
+<script src="~/js/jquery.counterup.min.js"></script>
+<!-- == Countdown == -->
+<script src="~/js/jquery.plugin.js"></script>
+<script src="~/js/jquery.countdown.min.js"></script>
+<!-- == custom Js File == -->
+<script src="~/js/custom.js"></script>
+
+<script>
+    function openNewTab(urlThanhVien) {
+        var _motasoluoc = urlThanhVien;
+        var arr = _motasoluoc.split('/');
+        var infoWebsite = arr[0].split(':');
+        var urlLinkWeb = infoWebsite[1].trim();
+
+        var win = window.open("http://" + urlLinkWeb, '_blank');
+        win.focus();
+    }
+</script>
+<style>
+
+    .hinhdaidien-hanhtrinh{height:200px;
+    border-bottom: 1px solid #ccc;margin: 0 auto;margin-top: 10px;padding-bottom: 10px;cursor:pointer}
+    .banner-area:before{
+        background:none;
+    }
+</style>
+@model IEnumerable<WebApplication1.Areas.Admin.Models.admin_thanhvien>
+@Html.Partial("_MainMenuArea")
+<div class="banner-area banner-area--blog all-text-white text-center lazy" data-src="@ViewBag.arrBanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @*<h1 class="page-title">Thành viên</h1>*@
+                
+                <h1 class="page-title">@Resources.Resource.thanhvien</h1>
+                @*@{
+                    if (Session["CurrentCulture"] == null)
+                    {
+                        <h1 class="page-title">Thành viên</h1>
+                    }
+                    else
+                    {
+                        if (Session["CurrentCulture"] != null)
+                        {
+                            <h1 class="page-title">@Session["Thanhvien"]</h1>
+                        }
+                    }
+                }*@
+                @*<ul class="fund-breadcumb">
+                    <li><a href="@Url.Action("Index", "Home")">@Resources.Resource.trangchu</a> </li>
+                    <li><a href="@Url.Action("Index", "Member")">@Resources.Resource.thanhvien</a> </li>
+                </ul>*@
+
+                @*<ul class="fund-breadcumb">
+                    @{
+                        if (Session["CurrentCulture"] == null)
+                        {
+                            <li><a href="@Url.Action("Index", "Home")">Trang chủ</a> </li>
+                            <li><a href="@Url.Action("Index", "Member")">Thành viên</a> </li>
+                        }
+                        else
+                        if (Session["CurrentCulture"] != null)
+                        {
+                            <li><a href="@Url.Action("Index", "Home")">@Session["Trangchu"]</a> </li>
+                            <li><a href="@Url.Action("Index", "Member")">@Session["Thanhvien"]</a> </li>
+                        }
+                    }
+                </ul>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                @*<form class="search-form widget" style="margin-bottom:15px;">
+                    <input type="search" placeholder="Search" class="form-control search-form__input" />
+                    <button type="submit" class="search-form__submit"><i class="fa fa-search base-color"></i> </button>
+                </form>*@
+
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            string urlhinhdaidien = @"../.." + item.urlhinhanh;
+                            <div class="col-sm-6 col-xs-12 res-mobile">
+                                <div class="img_member blog-post ">
+                                    @*<div class="blog-post__thumbnail-wrap pr hinhdaidien-hanhtrinh" onclick="_RedirectUrl('@Url.Action("Detail", "Member",new{id=item.id})')">*@
+                                    <div class="blog-post__thumbnail-wrap pr hinhdaidien-hanhtrinh" style="min-height:180px;">
+                                        <img class="lazy" onclick="openNewTab('@item.motasoluoc')" style="width:100%;height:100%;object-fit:fill" data-src="@urlhinhdaidien" alt="">
+                                    </div>
+                                    <div class="blog-post__text-content" style="height:200px;padding-top:10px;">
+                                        <h4 class="blog-post__title heading-label-four tenhanhtrinh">
+                                            <a href="@Url.Action("Detail", "Member",new{id=item.id})">
+
+                                                @*Tên thành viên*@
+                                                @*@item.tenthanhvien*@
+
+                                                @{
+                                                    if (Session["CurrentCulture"] == null)
+                                                    {
+                                                        @item.tenthanhvien
+                                                    }
+                                                    if (Session["CurrentCulture"] != null)
+                                                    {
+                                                        if (Session["CurrentCulture"].ToString() == "en-US")
+                                                        {
+                                                            @item.tenthanhvien_en
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.tenthanhvien
+                                                        }
+                                                    }
+                                                }
+                                            </a>
+                                        </h4>
+                                        <div style="width:100%;" class="mota-hanhtrinh">
+                                            @*Mô tả sơ lược*@
+                                            @*@item.motasoluoc*@
+
+                                            @{
+                                                if (Session["CurrentCulture"] == null)
+                                                {
+                                                    @item.motasoluoc
+                                                }
+                                                if (Session["CurrentCulture"] != null)
+                                                {
+                                                    if (Session["CurrentCulture"].ToString() == "en-US")
+                                                    {
+                                                        @*@item.motasoluoc_en*@
+                                            var str = item.motasoluoc_en;
+                                            var arr = str.Split('/');
+                                            for (int i = 0; i < arr.Length; i++)
+                                                        {
+                                                            if (i < arr.Length - 1)
+                                                            {
+                                                                <a>@arr[i]</a><br />
+                                                            }
+                                                            else
+                                                            {
+                                                                <a>@arr[i]</a>
+                                                            }
+
+                                                        }
+                                                    }
+                                                else
+                                            {
+                                                @*@item.motasoluoc*@
+                                            var str = item.motasoluoc;
+                                            var arr = str.Split('/');
+
+                                            for (int i = 0; i < arr.Length; i++)
+                                            {
+                                                if (i < arr.Length - 1)
+                                                {
+                                                    <a>@arr[i]</a><br />
+                                                            }
+                                                            else
+                                                            {
+                                                                <a>@arr[i]</a>
+                                                            }
+
+                                                        }
+
+
+                                                    }
+                                                }
+                                            }
+                                        </div>
+                                        <div class="btn_readmore" style="bottom: 45px;position: absolute; right:30px;">
+                                            <a href="@Url.Action("Detail", "Member",new{id=item.id})" class="btn">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+                <div class="clear"></div>
+                @{
+                    if (ViewBag.haspagination)
+                    {
+                        <div class="fund-pagination mb30">
+
+                            @if ((int)ViewBag.pages != 0)
+                            {
+                                for (int i = 1; i <= Convert.ToInt32(ViewBag.pages); i++)
+                                {
+                                    if (i == Convert.ToInt32(ViewBag.pickpage))
+                                    {
+                                        <a class="active" href="@Url.Action("Index", "Member",new{Page=i})">@i</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("Index", "Member",new{Page=i})">@i</a>
+                                    }
+
+                                }
+                            }
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,178 @@
+﻿<!-- == jQuery Librery == -->
+<script src="~/js/jquery-2.2.4.min.js"></script>
+<!-- == Bootsrap js File == -->
+<script src="~/js/bootstrap.min.js"></script>
+<!-- == mixitup == -->
+<script src="~/js/mixitup.min.js"></script>
+<!-- == Select 2 == -->
+<script src="~/js/select2.min.js"></script>
+<!-- == Gallery popup == -->
+<script src="~/js/jquery.colorbox-min.js"></script>
+<!-- == Image Lazy Load == -->
+<script src="~/js/jquery.lazy.min.js"></script>
+<!-- == Slick == -->
+<script src="~/js/slick.min.js"></script>
+<!-- == Counter == -->
+<script src="~/js/jquery.waypoints.min.js"></script>
+<script src="~/js/jquery.counterup.min.js"></script>
+<!-- == Countdown == -->
+<script src="~/js/jquery.plugin.js"></script>
+<script src="~/js/jquery.countdown.min.js"></script>
+<!-- == custom Js File == -->
+<script src="~/js/custom.js"></script>
+
+<style>
+    .imgUrl_{
+        width:100%;height:100%;
+    }
+    .divimg__{
+        height:180px;
+        cursor:pointer;
+        border:1px solid #ccc;
+        /*margin:10px;*/
+    }
+    .modal1-content {
+        padding-top:0px;
+        margin: auto;
+        display: block;
+        position: relative;
+        top: 30%;
+    }
+    #myModal1{
+        padding-top:0px;
+    }
+    .banner-area:before {
+    background: none;
+}
+</style>
+
+@Html.Partial("_MainMenuArea")
+@*<div class="banner-area banner-area--blog all-text-white text-center lazy" data-src="../../images/blog/banner.jpg">*@
+<div class="banner-area banner-area--blog all-text-white text-center lazy" data-src="@ViewBag.arrBanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @*<h1 class="page-title">Chi tiết hình ảnh</h1>*@
+
+                <h1 class="page-title">@Resources.Resource.hinhanhchitiet</h1>
+                @*@{
+                    if (Session["CurrentCulture"] == null)
+                    {
+                        <h1 class="page-title">Chi tiết hình ảnh</h1>
+                    }
+                    else
+                    {
+                        if (Session["CurrentCulture"] != null)
+                        {
+                            <h1 class="page-title">@Session["Hinhanhct"]</h1>
+                        }
+                    }
+                }*@
+                @*<ul class="fund-breadcumb">
+                    <li><a href="@Url.Action("Index", "Home")">@Resources.Resource.trangchu</a> </li>
+                    <li><a href="@Url.Action("Index", "Gallery")">@Resources.Resource.hinhanh</a> </li>
+                    <li><a href="#">@Resources.Resource.hinhanhchitiet</a> </li>
+                </ul>*@
+
+                @*<ul class="fund-breadcumb">
+                    @{
+                        if (Session["CurrentCulture"] == null)
+                        {
+                            <li><a href="@Url.Action("Index", "Home")">Trang chủ</a> </li>
+                            <li><a href="@Url.Action("Index", "Gallery")">Hình ảnh</a> </li>
+                            <li><a href="#">Chi tiết hình ảnh</a> </li>
+                        }
+                        else
+                        if (Session["CurrentCulture"] != null)
+                        {
+                            <li><a href="@Url.Action("Index", "Home")">@Session["Trangchu"]</a> </li>
+                            <li><a href="@Url.Action("Index", "Gallery")">@Session["Gallery"]</a> </li>
+                            <li><a href="#">@Session["Hinhanhct"]</a> </li>
+                        }
+                    }
+                </ul>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content section-padding" style="padding-top:50px;">
+    <div class="container">
+        <div class="row" style="padding-bottom:20px;">
+            <a style="font-size:24px;font-weight:bold;font-family:Tahoma">
+            Album @ViewBag.tenalbum
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+
+
+                @*asd*@
+                
+                @*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>*@
+                @*<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
+                <!------ Include the above in your HEAD tag ---------->
+                @*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">*@
+                <div class="container">
+                    <div class="row">
+                        <div class="row">
+                            @*<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                <a onclick="openPopup('https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')" class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                   data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                   data-target="#image-gallery">
+                                    <img class="img-thumbnail"
+                                         src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                         alt="Another alt text">
+                                </a>
+                            </div>*@
+
+                            @{
+                                if (ViewBag._lstImg != null)
+                                {
+                                    foreach (var item in ViewBag._lstImg)
+                                    {
+                                        <div class="col-lg-3 col-md-4 col-xs-6 thumb divimg__" style="padding:10px">
+                                            <img class="imgUrl_" onclick="openPopup('@item')" src="@item" />
+                                        </div>
+                                    }
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+                @*asd*@
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal1" class="modal1">
+    <span class="close1">&times;</span>
+    <img class="modal1-content" id="img01">
+</div>
+
+<script>
+    var modal = document.getElementById('myModal1');
+
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption1");
+    function openPopup(src) {
+        modal.style.display = "block";
+        modalImg.src = src
+        //captionText.innerHTML = this.alt;
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close1")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    modal.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>

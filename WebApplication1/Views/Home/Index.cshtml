@@ -1,0 +1,371 @@
+﻿<!-- == jQuery Librery == -->
+<script src="~/js/jquery-2.2.4.min.js"></script>
+<!-- == Bootsrap js File == -->
+<script src="~/js/bootstrap.min.js"></script>
+<!-- == mixitup == -->
+<script src="~/js/mixitup.min.js"></script>
+<!-- == Select 2 == -->
+<script src="~/js/select2.min.js"></script>
+<!-- == Color box == -->
+<script src="~/js/jquery.colorbox-min.js"></script>
+<!-- == Slick == -->
+<script src="~/js/slick.min.js"></script>
+<!-- == Image Lazy Load == -->
+<script src="~/js/jquery.lazy.min.js"></script>
+<!-- == Wow js == -->
+<script src="~/js/wow.min.js"></script>
+<!-- == Revolution Slider JS == -->
+<script src="~/js/revolution/jquery.themepunch.tools.min.js"></script>
+<script src="~/js/revolution/jquery.themepunch.revolution.min.js"></script>
+<script src="~/js/revolution/extensions/revolution.extension.actions.min.js"></script>
+<script src="~/js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="~/js/revolution/extensions/revolution.extension.navigation.min.js"></script>
+<script src="~/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="~/js/revolution-active.js"></script>
+<!-- == custom Js File == -->
+<script src="@Url.Content("~/js/custom.js")"></script>
+@model WebApplication1.Controllers.HomeController.ToIndexPage
+<script>
+    $(document).ready(function () {
+        var url = window.location.pathname;
+        if (url.toLowerCase() == "/home/index") {
+            window.location.href="/";
+        }
+    });
+</script>
+
+<style>
+    .slick-track,.slick-list draggable{
+        max-height:585px!important;
+    }
+    .slick-list,.slick-slide .slick-active,.slick-slide:focus {
+        outline: none!important;
+    }
+    .block_thanhvien_motasoluoc
+    {
+        height:4.5em;margin-bottom:25px;
+    }
+.thanhvien_motasoluoc {
+        margin-top:10px;
+  overflow: hidden;
+  position: relative; 
+  line-height: 1.5em;
+  max-height: 4.5em;
+  text-align: justify;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+    .thanhvien_motasoluoc+.thanhvien_motasoluoc{
+  margin-top:10px;
+}
+    .thanhvien_motasoluoc:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+    .thanhvien_motasoluoc:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+
+</style>
+
+<div class="slider-area">
+    <div class="main-menu-area main-menu-area--absolute">
+        <div class="container">
+            <div class="menu-logo">
+                <div class="logo">
+                    <a href="@Url.Action("Index", "Home")" class="logo-index"><img src="~/images/logo.png" alt="" /></a>
+                </div>
+
+                <nav id="easy-menu">
+                    <ul class="menu-list">
+
+                        <li><a href="@Url.Action("About", "Home")">
+                                @Resources.Resource.gioithieu
+                            @*@if (Session["Gioithieu"] != null)
+                            {<div>@Session["Gioithieu"].ToString()</div>}
+                            else
+                            {<div>Giới thiệu</div>}*@
+                            </a></li>
+                        @*<li>
+                            <a href="@Url.Action("Index", "OurJourney")">Hành trình <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="@Url.Action("Index", "OurJourney")">Journey Index</a></li>
+                                <li><a href="@Url.Action("Detail", "OurJourney")">Journey Detail</a></li>
+                            </ul>
+                        </li>*@
+                        <li>
+                            <a href="@Url.Action("Index", "OurJourney")">
+                                @Resources.Resource.hanhtrinh
+                                @*@if (Session["Hanhtrinh"] != null) {<div>@Session["Hanhtrinh"]</div>}
+                                else {<div>Hành trình</div>}*@
+                            </a>
+                        </li>
+                        @*<li>
+                            <a href="@Url.Action("About", "News")">Tin tức mới <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="@Url.Action("Index", "News")">Tin tức</a></li>
+                                <li><a href="@Url.Action("Detail", "News")">Chi tiết tin tức</a></li>
+                            </ul>
+                        </li>*@
+                        <li>
+                            <a href="@Url.Action("Index", "News")">
+                                @Resources.Resource.tintucmoi
+                            @*@{
+                                if (Session["Tintucmoi"] != null)
+                                {<div>@Session["Tintucmoi"]</div>}
+                                else
+                                {<div>Tin tức mới</div>}
+                            }*@
+                            @*Tin tức mới*@
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Gallery")">
+                                @Resources.Resource.hinhanh
+                            @*@if (Session["Hinhanh"] != null)
+                            {<div>@Session["Hinhanh"]</div>}
+                            else
+                            {<div>Hình ảnh</div>}*@
+                            @*Hình ảnh*@
+                            </a>
+                        </li>
+                        @*<li>
+                            <a href="@Url.Action("Index", "Member")">Thành viên <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="@Url.Action("Index", "Member")">Thành viên</a></li>
+                                <li><a href="@Url.Action("Detail", "Member")">Chi tiết thành viên</a></li>
+                            </ul>
+                        </li>*@
+                        <li>
+                            <a href="@Url.Action("Index", "Member")">
+                                @Resources.Resource.thanhvien
+                                @*@if (Session["Thanhvien"] != null)
+                                {<div>@Session["Thanhvien"]</div>}
+                                else
+                                {<div>Thành viên</div>}*@
+                            @*Thành viên*@
+                            </a>
+                        </li>
+                        @*<li><a href="@Url.Action("About", "Home")">Giới thiệu</a></li>*@
+                        <li><a href="@Url.Action("Contact", "Home")">
+                                @Resources.Resource.lienhe
+                                @*@if (Session["Lienhe"] != null)
+                                {<div>@Session["Lienhe"]</div>}
+                                else
+                                {<div>Liên hệ</div>}*@
+                            @*Liên hệ*@
+                            </a></li>
+                    </ul>
+                </nav><!--#easy-menu-->
+                <div class="donate-button-wrap">
+                    <a href="#" class="hidden-lg hidden-md" id="humbarger-icon"><i class="fa fa-bars"></i> </a>
+                </div>
+
+                <div class="donate-button-wrap" style="margin-left:15px;">
+                    <a href="@Url.Action("ChangeCulture", "Base", new { ddCul = "vi-VN", url = "Home;Index" })">
+                        <img alt="" src="/images/vn.svg" width="28" height="22">
+                    </a>
+                    <a href="@Url.Action("ChangeCulture", "Base", new { ddCul = "en-US", url = "Home;Index" })">
+                        <img alt="" src="/images/us.svg" width="28" height="22">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+</div>
+<div class="body-overlay"></div>
+
+<div class="section-padding feature-section" style="padding-bottom:0px;">
+    <aside class="sidebar" style="">
+        <div class="widget" style="margin-bottom:20px;">
+            <div class="widget__text-content" style="width:100%!important">
+                <div class="upcomming-event-carousel" id="upcomming-event-carousel" style="margin:0;width:100%!important;max-width:100%!important">
+                    @{
+                        @*foreach (var item in ViewBag.arrBanner)
+                        {
+                            <div class="upcomming-event-carousel__item" style="margin:0;width:100%!important">
+                                <div class="image text-center">
+                                    <img class="event-thumbnail lazy" style="border:none;border-radius:0;max-height:600px;max-width:1920px" data-src="@item" alt="">
+                                </div>
+                            </div>
+                        }*@
+
+                    foreach (var item in Model.arrBanner)
+                    {
+                        <div class="upcomming-event-carousel__item" style="margin:0;width:100%!important">
+                            <div class="image text-center">
+                                <img class="event-thumbnail lazy" style="border:none;border-radius:0;max-height:600px;max-width:1920px" data-src="@item" alt="">
+                            </div>
+                        </div>
+                    }
+
+
+                    }
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<section class="section-padding feature-section" style="padding-top:10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @*<div class="section-heading text-center">
+                    <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">Our <span class="base-color">CAUSES</span> </h2>
+                    <span class="section-sub-title wow fadeInUpXsd disinb" data-wow-duration=".9s" data-wow-delay=".1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                    <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
+                </div>*@
+
+                <div class="content_post">
+
+                    @Html.Raw(Model.thongtincodinh)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="volunteer-section section-padding ash-white-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading text-center">
+                    <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">
+                        
+                            @{
+                                if (Session["Thanhvien"] != null)
+                                {
+                                    <span class="base-color" style="text-transform:uppercase">@Session["Thanhvien"]</span>
+                                }
+                                else
+                                {
+                                    <span class="base-color">THÀNH VIÊN</span>
+                                }
+                            }
+                            
+                        
+                    </h2>
+                    <div class="section-heading-separator wow fadeInUpXsd" data-wow-duration="1.1s" data-wow-delay=".1s"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-eq-rs-height _arrThanhVien">
+            @{
+                foreach (var item in Model.IndexThanhVien)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="fund-volunteer text-center wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
+                            <div class="fund-volunteer__photo-wrap pr" style="width:210px;border-radius:20px;border: 1px solid #cccccc;cursor:pointer">
+                                @*<img data-src="images/home/vol-1.jpg" class="img-circle fund-volunteer__photo lazy" />*@
+                                <img onclick="openNewTab('@item.motasoluoc')" data-src="@item.urlhinhanh" class="lazy" style="width:100%;height:100%;max-width:100%;border-radius:20px"/>
+                                <div class="loader"></div>
+                            </div>
+                            <div class="fund-volunteer__text-content">
+                                <h3 class="fund-volunteer__name">@item.tenthanhvien</h3>
+                                <div class="section-heading-separator section-heading-separator--small"></div>
+
+                                <div class="block_thanhvien_motasoluoc">
+                                    @{
+                                        var str = item.motasoluoc;
+                                        var arr = str.Split('/');
+                                        for (int i = 0; i < arr.Length; i++)
+                                        {
+                                            if (i < arr.Length - 1)
+                                            {
+                                                <a>@arr[i]</a><br />
+                                            }
+                                            else
+                                            {
+                                                <a>@arr[i]</a>
+                                            }
+
+                                        }
+                                    }
+                                    @*<div class="thanhvien_motasoluoc">@item.motasoluoc</div>*@
+                                </div>
+                                
+
+                                @*<p class="thanhvien_motasoluoc">@item.motasoluoc</p>*@
+
+                                <ul class="list-inline round-social-icons mb30">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                                <a href="@Url.Action("Detail", "Member",new{id=item.id})" class="btn">Read More</a>
+                            </div>
+                        </div><!--/.fund-volunteer-->
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    $('._arrThanhVien').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: false,
+        nextArrow: false,
+        responsive: [
+          {
+              breakpoint: 1024,
+              settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+              }
+          },
+          {
+              breakpoint: 600,
+              settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+              }
+          },
+          {
+              breakpoint: 480,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+              }
+          }
+        ]
+    });
+    $('._arrThanhVien').slick({
+        prevArrow: "<img class='a-left control-c prev slick-prev'>",
+        nextArrow: "<img class='a-right control-c next slick-next'>"
+    });
+    function openNewTab(urlThanhVien){
+        var _motasoluoc=urlThanhVien;
+        var arr=_motasoluoc.split('/');
+        var infoWebsite=arr[0].split(':');
+        var urlLinkWeb=infoWebsite[1].trim();
+
+        var win = window.open("http://"+urlLinkWeb, '_blank');
+        win.focus();
+    }
+</script>
+
+<script src="js/jquery.plugin.js"></script>

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApplication1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin_account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="landangnhapcuoi" Type="datetime" />
+    <Property Name="hoten" Type="nvarchar" MaxLength="255" />
+    <Property Name="gioitinh" Type="bit" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="quyen" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="admin_baivietlienhe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenbailienhe" Type="ntext" />
+    <Property Name="noidung" Type="ntext" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="thutuhienthi" Type="int" />
+    <Property Name="tenbailienhe_en" Type="ntext" />
+    <Property Name="noidung_en" Type="ntext" />
+  </EntityType>
+  <EntityType Name="admin_gioithieu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenbaigioithieu" Type="ntext" />
+    <Property Name="noidung" Type="ntext" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="thutuhienthi" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="tenbaigioithieu_en" Type="ntext" />
+    <Property Name="noidung_en" Type="ntext" />
+  </EntityType>
+  <EntityType Name="admin_hanhtrinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenhanhtrinh" Type="ntext" />
+    <Property Name="loaihanhtrinh" Type="int" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="motasoluoc" Type="ntext" />
+    <Property Name="noidung" Type="ntext" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="thongtinthoigian" Type="ntext" />
+    <Property Name="thongtindiadiem" Type="ntext" />
+    <Property Name="hinhdaidien" Type="ntext" />
+    <Property Name="tenhanhtrinh_en" Type="ntext" />
+    <Property Name="motasoluoc_en" Type="ntext" />
+    <Property Name="noidung_en" Type="ntext" />
+    <Property Name="diadiem_en" Type="ntext" />
+  </EntityType>
+  <EntityType Name="admin_hinhanh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenhinhanh" Type="ntext" />
+    <Property Name="urlhinhanh" Type="ntext" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="loaihinhanh" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="thutuhien" Type="int" />
+  </EntityType>
+  <EntityType Name="admin_loaihanhtrinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenloaihanhtrinh" Type="nvarchar" MaxLength="255" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="ghichu" Type="ntext" />
+  </EntityType>
+  <EntityType Name="admin_loaihinhanh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenloaihinhanh" Type="ntext" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="motahinhanh" Type="ntext" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="tenloaihinhanh_en" Type="ntext" />
+    <Property Name="motahinhanh_en" Type="ntext" />
+  </EntityType>
+  <EntityType Name="admin_loaitintuc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenloaitintuc" Type="ntext" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="hinhanhtintuc" Type="ntext" />
+    <Property Name="motasoluoc" Type="ntext" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="hienthi" Type="bit" />
+  </EntityType>
+  <EntityType Name="admin_nhomthanhvien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tennhomthanhvien" Type="ntext" />
+    <Property Name="motanhom" Type="ntext" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="hinhdaidien" Type="ntext" />
+  </EntityType>
+  <EntityType Name="admin_thanhvien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenthanhvien" Type="ntext" />
+    <Property Name="motasoluoc" Type="ntext" />
+    <Property Name="chitiet" Type="ntext" />
+    <Property Name="urlhinhanh" Type="ntext" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="nhomthanhvien" Type="int" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="tenthanhvien_en" Type="ntext" />
+    <Property Name="motasoluoc_en" Type="ntext" />
+    <Property Name="chitiet_en" Type="ntext" />
+    <Property Name="thutuhienthi" Type="int" />
+  </EntityType>
+  <EntityType Name="admin_thongtincodinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="diachi" Type="ntext" />
+    <Property Name="dienthoai" Type="ntext" />
+    <Property Name="website" Type="ntext" />
+    <Property Name="fax" Type="ntext" />
+    <Property Name="mail" Type="ntext" />
+    <Property Name="logo" Type="ntext" />
+    <Property Name="diachigmap" Type="ntext" />
+    <Property Name="baiviettrangchu" Type="ntext" />
+    <Property Name="diachi_en" Type="ntext" />
+    <Property Name="baiviettrangchu_en" Type="ntext" />
+  </EntityType>
+  <EntityType Name="admin_tintuc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tentintuc" Type="ntext" />
+    <Property Name="loaitintuc" Type="int" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="motasoluoc" Type="ntext" />
+    <Property Name="noidungtintuc" Type="ntext" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="hinhdaidien" Type="ntext" />
+    <Property Name="tentintuc_en" Type="ntext" />
+    <Property Name="noidungtintuc_en" Type="ntext" />
+    <Property Name="motasoluoc_en" Type="ntext" />
+  </EntityType>
+  <EntityType Name="banner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenbanner" Type="ntext" />
+    <Property Name="urlbanner" Type="ntext" />
+    <Property Name="motabanner" Type="ntext" />
+    <Property Name="ghichu" Type="ntext" />
+    <Property Name="ngaytao" Type="datetime" />
+    <Property Name="ngaycapnhat" Type="datetime" />
+    <Property Name="nguoitao" Type="int" />
+    <Property Name="hienthi" Type="bit" />
+    <Property Name="thutuhien" Type="int" />
+    <Property Name="daxoa" Type="bit" />
+    <Property Name="loaibanner" Type="int" />
+  </EntityType>
+  <EntityType Name="loaibanner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenloaibanner" Type="ntext" />
+    <Property Name="daxoa" Type="bit" />
+  </EntityType>
+  <Association Name="FK_admin_baivietlienhe_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_baivietlienhe" Type="Self.admin_baivietlienhe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_baivietlienhe">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_gioithieu_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_gioithieu" Type="Self.admin_gioithieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_gioithieu">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_hanhtrinh_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_hanhtrinh" Type="Self.admin_hanhtrinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_hanhtrinh">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_hanhtrinh_admin_loaihanhtrinh">
+    <End Role="admin_loaihanhtrinh" Type="Self.admin_loaihanhtrinh" Multiplicity="0..1" />
+    <End Role="admin_hanhtrinh" Type="Self.admin_hanhtrinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_loaihanhtrinh">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_hanhtrinh">
+        <PropertyRef Name="loaihanhtrinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_hinhanh_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_hinhanh" Type="Self.admin_hinhanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_hinhanh">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_hinhanh_admin_loaihinhanh">
+    <End Role="admin_loaihinhanh" Type="Self.admin_loaihinhanh" Multiplicity="0..1" />
+    <End Role="admin_hinhanh" Type="Self.admin_hinhanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_loaihinhanh">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_hinhanh">
+        <PropertyRef Name="loaihinhanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_loaihanhtrinh_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_loaihanhtrinh" Type="Self.admin_loaihanhtrinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_loaihanhtrinh">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_loaihinhanh_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_loaihinhanh" Type="Self.admin_loaihinhanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_loaihinhanh">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_loaitintuc_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_loaitintuc" Type="Self.admin_loaitintuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_loaitintuc">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_nhomthanhvien_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_nhomthanhvien" Type="Self.admin_nhomthanhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_nhomthanhvien">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_thanhvien_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_thanhvien" Type="Self.admin_thanhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_thanhvien">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_thanhvien_admin_nhomthanhvien">
+    <End Role="admin_nhomthanhvien" Type="Self.admin_nhomthanhvien" Multiplicity="0..1" />
+    <End Role="admin_thanhvien" Type="Self.admin_thanhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_nhomthanhvien">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_thanhvien">
+        <PropertyRef Name="nhomthanhvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_tintuc_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="admin_tintuc" Type="Self.admin_tintuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_tintuc">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_admin_tintuc_admin_loaitintuc">
+    <End Role="admin_loaitintuc" Type="Self.admin_loaitintuc" Multiplicity="0..1" />
+    <End Role="admin_tintuc" Type="Self.admin_tintuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_loaitintuc">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="admin_tintuc">
+        <PropertyRef Name="loaitintuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_banner_admin_account">
+    <End Role="admin_account" Type="Self.admin_account" Multiplicity="0..1" />
+    <End Role="banner" Type="Self.banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="banner">
+        <PropertyRef Name="nguoitao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_banner_loaibanner">
+    <End Role="loaibanner" Type="Self.loaibanner" Multiplicity="0..1" />
+    <End Role="banner" Type="Self.banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="loaibanner">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="banner">
+        <PropertyRef Name="loaibanner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebApplication1ModelStoreContainer">
+    <EntitySet Name="admin_account" EntityType="Self.admin_account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_baivietlienhe" EntityType="Self.admin_baivietlienhe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_gioithieu" EntityType="Self.admin_gioithieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_hanhtrinh" EntityType="Self.admin_hanhtrinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_hinhanh" EntityType="Self.admin_hinhanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_loaihanhtrinh" EntityType="Self.admin_loaihanhtrinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_loaihinhanh" EntityType="Self.admin_loaihinhanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_loaitintuc" EntityType="Self.admin_loaitintuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_nhomthanhvien" EntityType="Self.admin_nhomthanhvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_thanhvien" EntityType="Self.admin_thanhvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_thongtincodinh" EntityType="Self.admin_thongtincodinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_tintuc" EntityType="Self.admin_tintuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="banner" EntityType="Self.banner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loaibanner" EntityType="Self.loaibanner" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_admin_baivietlienhe_admin_account" Association="Self.FK_admin_baivietlienhe_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_baivietlienhe" EntitySet="admin_baivietlienhe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_gioithieu_admin_account" Association="Self.FK_admin_gioithieu_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_gioithieu" EntitySet="admin_gioithieu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_hanhtrinh_admin_account" Association="Self.FK_admin_hanhtrinh_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_hanhtrinh" EntitySet="admin_hanhtrinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_hanhtrinh_admin_loaihanhtrinh" Association="Self.FK_admin_hanhtrinh_admin_loaihanhtrinh">
+      <End Role="admin_loaihanhtrinh" EntitySet="admin_loaihanhtrinh" />
+      <End Role="admin_hanhtrinh" EntitySet="admin_hanhtrinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_hinhanh_admin_account" Association="Self.FK_admin_hinhanh_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_hinhanh" EntitySet="admin_hinhanh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_hinhanh_admin_loaihinhanh" Association="Self.FK_admin_hinhanh_admin_loaihinhanh">
+      <End Role="admin_loaihinhanh" EntitySet="admin_loaihinhanh" />
+      <End Role="admin_hinhanh" EntitySet="admin_hinhanh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_loaihanhtrinh_admin_account" Association="Self.FK_admin_loaihanhtrinh_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_loaihanhtrinh" EntitySet="admin_loaihanhtrinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_loaihinhanh_admin_account" Association="Self.FK_admin_loaihinhanh_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_loaihinhanh" EntitySet="admin_loaihinhanh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_loaitintuc_admin_account" Association="Self.FK_admin_loaitintuc_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_loaitintuc" EntitySet="admin_loaitintuc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_nhomthanhvien_admin_account" Association="Self.FK_admin_nhomthanhvien_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_nhomthanhvien" EntitySet="admin_nhomthanhvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_thanhvien_admin_account" Association="Self.FK_admin_thanhvien_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_thanhvien" EntitySet="admin_thanhvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_thanhvien_admin_nhomthanhvien" Association="Self.FK_admin_thanhvien_admin_nhomthanhvien">
+      <End Role="admin_nhomthanhvien" EntitySet="admin_nhomthanhvien" />
+      <End Role="admin_thanhvien" EntitySet="admin_thanhvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_tintuc_admin_account" Association="Self.FK_admin_tintuc_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="admin_tintuc" EntitySet="admin_tintuc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_admin_tintuc_admin_loaitintuc" Association="Self.FK_admin_tintuc_admin_loaitintuc">
+      <End Role="admin_loaitintuc" EntitySet="admin_loaitintuc" />
+      <End Role="admin_tintuc" EntitySet="admin_tintuc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_banner_admin_account" Association="Self.FK_banner_admin_account">
+      <End Role="admin_account" EntitySet="admin_account" />
+      <End Role="banner" EntitySet="banner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_banner_loaibanner" Association="Self.FK_banner_loaibanner">
+      <End Role="loaibanner" EntitySet="loaibanner" />
+      <End Role="banner" EntitySet="banner" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

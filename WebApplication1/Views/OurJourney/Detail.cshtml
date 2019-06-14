@@ -1,0 +1,223 @@
+﻿<!-- == jQuery Librery == -->
+<script src="~/js/jquery-2.2.4.min.js"></script>
+<!-- == Bootsrap js File == -->
+<script src="~/js/bootstrap.min.js"></script>
+<!-- == mixitup == -->
+<script src="~/js/mixitup.min.js"></script>
+<!-- == Select 2 == -->
+<script src="~/js/select2.min.js"></script>
+<!-- == Gallery popup == -->
+<script src="~/js/jquery.colorbox-min.js"></script>
+<!-- == Image Lazy Load == -->
+<script src="~/js/jquery.lazy.min.js"></script>
+<!-- == Slick == -->
+<script src="~/js/slick.min.js"></script>
+<!-- == Counter == -->
+<script src="~/js/jquery.waypoints.min.js"></script>
+<script src="~/js/jquery.counterup.min.js"></script>
+<!-- == Countdown == -->
+<script src="~/js/jquery.plugin.js"></script>
+<script src="~/js/jquery.countdown.min.js"></script>
+<!-- == custom Js File == -->
+<script src="~/js/custom.js"></script>
+
+<style>
+    .banner-area:before{
+        background:none;
+    }
+</style>
+@model WebApplication1.Areas.Admin.Models.admin_hanhtrinh
+@Html.Partial("_MainMenuArea")
+@*<div class="banner-area banner-area--blog all-text-white text-center lazy" data-src="../../images/blog/banner.jpg">*@
+<div class="banner-area banner-area--blog all-text-white text-center lazy" data-src="@ViewBag.arrBanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <h1 class="page-title">@Resources.Resource.hanhtrinhchitiet</h1>
+
+                @*@{
+                    if (Session["CurrentCulture"] == null)
+                    {
+                        <h1 class="page-title">Chi tiết hành trình</h1>
+                    }
+                    else
+                    {
+                        if (Session["CurrentCulture"] != null)
+                        {
+                            <h1 class="page-title">@Session["Hanhtrinhct"]</h1>
+                        }
+                    }
+                }*@
+
+
+                @*<h1 class="page-title">Chi tiết hành trình</h1>*@
+
+                @*<ul class="fund-breadcumb">
+                    <li><a href="@Url.Action("Index", "Home")">@Resources.Resource.trangchu</a> </li>
+                    <li><a href="@Url.Action("Index", "OurJourney")">@Resources.Resource.hanhtrinh</a> </li>
+                    <li><a href="#">@Resources.Resource.hanhtrinhchitiet</a> </li>
+                </ul>*@
+
+                @*<ul class="fund-breadcumb">
+                    @{
+                        if (Session["CurrentCulture"] == null)
+                        {
+                            <li><a href="@Url.Action("Index", "Home")">Trang chủ</a> </li>
+                            <li><a href="@Url.Action("Index", "OurJourney")">Hành trình</a> </li>
+                            <li><a href="#">Chi tiết hành trình</a> </li>
+                        }
+                        else
+                        if (Session["CurrentCulture"] != null)
+                        {
+                            <li><a href="@Url.Action("Index", "Home")">@Session["Trangchu"]</a> </li>
+                            <li><a href="@Url.Action("Index", "OurJourney")">@Session["Hanhtrinh"]</a> </li>
+                                <li><a href="#">@Session["Hanhtrinhct"]</a> </li>
+                        }
+                    }
+
+
+
+                </ul>*@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="blog-details">
+                    <div class="blog-details-top mb40">
+                        <div class="blog-details-image mb10 pd30" style="padding:30px;">
+                            @*<img class="lazy" style="max-height:400px" width="750" height="438" data-src="@ViewBag.hinhdaidien" alt="">*@
+                            <img class="lazy" style="max-height:500px;width:100%;" data-src="@ViewBag.hinhdaidien" alt="">
+                            <div class="loader"></div>
+                        </div>
+                        <div class="blog-details-top__text-content">
+                            <h3 class="blog-details__title">
+                                @*Tên hành trình*@
+                                @*@Html.DisplayFor(model => model.tenhanhtrinh)*@
+
+                                @{
+                                    if (Session["CurrentCulture"] == null)
+                                    {
+                                        @Html.DisplayFor(model => model.tenhanhtrinh)
+                                    }
+                                    if (Session["CurrentCulture"] != null)
+                                    {
+                                        if (Session["CurrentCulture"].ToString() == "en-US")
+                                        {
+                                            @Html.DisplayFor(model => model.tenhanhtrinh_en)
+                                        }
+                                        else
+                                        {
+                                            @Html.DisplayFor(model => model.tenhanhtrinh)
+                                        }
+                                    }
+                                }
+
+
+                            </h3>
+
+                            <div class="hanhtrinh_motasoluoc" style="margin-bottom:30px;">
+                                @*Mô tả sơ lược*@
+                                @*@Html.DisplayFor(model => model.motasoluoc)*@
+
+                                @{
+                                    if (Session["CurrentCulture"] == null)
+                                    {
+                                        @Html.DisplayFor(model => model.motasoluoc)
+                                    }
+                                    if (Session["CurrentCulture"] != null)
+                                    {
+                                        if (Session["CurrentCulture"].ToString() == "en-US")
+                                        {
+                                            @Html.DisplayFor(model => model.motasoluoc_en)
+                                        }
+                                        else
+                                        {
+                                            @Html.DisplayFor(model => model.motasoluoc)
+                                        }
+                                    }
+                                }
+
+                            </div>
+
+                            <div class="blog-details__meta">
+                                <div class="blog-details__meta-item"><i class="fa fa-calendar pdr5 base-color"></i>
+                                @*Time journey*@
+                                @Html.DisplayFor(model => model.thongtinthoigian)
+                                </div>
+                                <div class="blog-details__meta-item"><i class="fa fa-map-marker fund-event__icon base-color"></i>
+                                @*Place*@
+                                    @*@Html.DisplayFor(model => model.thongtindiadiem)*@
+
+
+
+                                    @{
+                                        if (Session["CurrentCulture"] == null)
+                                        {
+                                            @Html.DisplayFor(model => model.thongtindiadiem)
+                                        }
+                                        if (Session["CurrentCulture"] != null)
+                                        {
+                                            if (Session["CurrentCulture"].ToString() == "en-US")
+                                            {
+                                                @Html.DisplayFor(model => model.diadiem_en)
+                                            }
+                                            else
+                                            {
+                                                @Html.DisplayFor(model => model.thongtindiadiem)
+                                            }
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-details-top mb40" style="padding:30px;float:left;width:100%;">
+                        @*@Html.Raw(Model.noidung)*@
+
+                        @{
+                            if (Session["CurrentCulture"] == null)
+                            {
+                                @Html.Raw(Model.noidung)
+                            }
+                            if (Session["CurrentCulture"] != null)
+                            {
+                                if (Session["CurrentCulture"].ToString() == "en-US")
+                                {
+                                    @Html.Raw(Model.noidung_en)
+                                }
+                                else
+                                {
+                                    @Html.Raw(Model.noidung)
+                                }
+                            }
+                        }
+
+
+                    </div>
+
+                    
+                    <div class="social-icons " style="float:left">
+                        <span>Follow Us On : </span>
+                        <ul class="list-inline pdl20">
+                            <li><a href="#"><i class="fa fa-facebook"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-twitter"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-instagram"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-vk"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i> </a> </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

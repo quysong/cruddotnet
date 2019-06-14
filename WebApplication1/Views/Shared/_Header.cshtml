@@ -1,0 +1,163 @@
+﻿<div class="preloader">
+    <div class="loader-inner ball-scale-multiple">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!--/.preloader-->
+<div class="color-shicher-wraper hidden">
+    <div class="swhicher-button">
+        <button data-att="color-yellow" type="button" class="yellow-bg"></button>
+        <button data-att="color-green" type="button" class="green-bg"></button>
+        <button data-att="color-cyan" type="button" class="cyan-bg"></button>
+        <button data-att="color-red" type="button" class="red-bg"></button><br />
+        <button data-att="color-purple" type="button" class="purple-bg"></button>
+        <button data-att="color-pink" type="button" class="pink-bg"></button>
+        <button data-att="color-gradient" type="button" class="gradient-bg"></button><br /><br />
+        <div class="tobar-fixed-check">
+            <input type="checkbox" id="topbar-fixed" /><label for="topbar-fixed"> Menu fixed when scroll </label>
+        </div>
+        <div class="backtop-top-check">
+            <input type="checkbox" id="backtotop-fixed" /><label for="backtotop-fixed"> Back to top hide/show</label>
+        </div>
+        <div class="removetopbar">
+            <input type="checkbox" id="topbar-checked" /><label for="topbar-checked"> Topbar show/hide </label>
+        </div><br />
+        <a href="#" class="btn">Purchase</a>
+    </div>
+    <div class="setting-button-wrapper">
+        <button type="button" class="setting-button"></button>
+    </div>
+</div><!--/.color-shicher-wraper-->
+<header class="fund-header">
+    <div class="top-bar base-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 text-xs-center">
+                    <div class="top-bar__contact">
+                        <i class="fa fa-envelope"></i> <span class="pdl5">
+                        @*info@thefund.com*@
+                        @ViewBag.thongtincodinh_mail
+                        </span>
+                        @*<span class="pdl15 pdr15">|</span>*@
+                        <br />
+                        <i class="fa fa-phone-square"></i> <span class="pdl5">
+                        @*+880 1234 2547 89*@
+                        @ViewBag.thongtincodinh_dienthoai
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 text-right text-xs-center">
+                    <div class="social-icons ">
+                        <span>Follow Us On : </span>
+                        <ul class="list-inline pdl20">
+                            <li><a href="#"><i class="fa fa-facebook"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-twitter"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-instagram"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-vk"></i> </a> </li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i> </a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="mobile-background-nav">
+    <div class="mobile-inner">
+        <span class="mobile-menu-close"><i class="icon-icomooon-close"></i></span>
+        <ul class="menu-accordion">
+            <li><a href="@Url.Action("About", "Home")">
+                @*@Session["Gioithieu"]*@
+                    @Resources.Resource.gioithieu
+                    @*@if (Session["Gioithieu"] != null)
+                    {<div>@Session["Gioithieu"]</div>}
+                    else
+                    {<div>Giới thiệu</div>}*@
+                @*Giới thiệu*@
+                </a></li>
+            @*<li>
+                <a href="@Url.Action("Index", "OurJourney")" class="has-submenu">Hành trình <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="@Url.Action("Index", "OurJourney")">Journey Index</a></li>
+                    <li><a href="@Url.Action("Detail", "OurJourney")">Journey Detail</a></li>
+                </ul>
+            </li>*@
+            <li>
+                <a href="@Url.Action("Index", "OurJourney")">
+                    @*@Session["Hanhtrinh"]*@
+                    @Resources.Resource.hanhtrinh
+                    @*@if (Session["Hanhtrinh"] != null){<div>@Session["Hanhtrinh"]</div>}
+                    else{<div>Hành trình</div>}*@
+                @*Hành trình*@
+                </a>
+            </li>
+            @*<li>
+                <a href="events.html" class="has-submenu">Tin tức mới<i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="event-details.html">Event Details</a></li>
+                </ul>
+            </li>*@
+            <li>
+                <a href="@Url.Action("Index", "News")">
+                    @Resources.Resource.tintucmoi
+                    @*@{ 
+                        if (Session["Tintucmoi"] != null){<div>@Session["Tintucmoi"]</div>}
+                        else{<div>Tin tức mới</div>}
+                    }*@
+                    @*@Session["Tintucmoi"]*@
+                @*Tin tức mới*@
+                </a>
+            </li>
+            @*<li>
+                <a href="blog.html" class="has-submenu">Hình ảnh<i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog-details.html">Blog Details</a></li>
+                </ul>
+            </li>*@
+            <li>
+                <a href="@Url.Action("Index", "Gallery")">
+                    @Resources.Resource.hinhanh
+                    @*@if (Session["Hinhanh"] != null){<div>@Session["Hinhanh"]</div>}
+                    else{<div>Hình ảnh</div>}*@
+                @*Hình ảnh*@
+                </a>
+            </li>
+            @*<li>
+                <a href="causes.html" class="has-submenu">Thành viên<i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="causes.html">Causes</a></li>
+                    <li><a href="causes-details.html">Causes Details</a></li>
+                </ul>
+            </li>*@
+            <li>
+                <a href="@Url.Action("Index", "Member")">
+                @*@Session["Thanhvien"]*@
+                    @Resources.Resource.thanhvien
+                    @*@if (Session["Thanhvien"] != null)
+                    {<div>@Session["Thanhvien"]</div>}
+                    else
+                    {<div>Thành viên</div>}*@
+
+                @*Thành viên*@
+                </a>
+            </li>
+            @*<li><a href="@Url.Action("About", "Home")">Giới thiệu</a></li>*@
+            <li><a href="@Url.Action("Contact", "Home")">
+                @*@Session["Lienhe"]*@
+                    @Resources.Resource.lienhe
+
+                    @*@if (Session["Lienhe"] != null)
+                    {<div>@Session["Lienhe"]</div>}
+                    else
+                    {<div>Liên hệ</div>}*@
+                @*Liên hệ*@
+                </a></li>
+        </ul>
+    </div>
+</nav>
+

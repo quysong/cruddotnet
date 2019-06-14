@@ -1,0 +1,134 @@
+﻿<div class="main-menu-area">
+    <div class="container">
+        <div class="menu-logo">
+            <div class="logo">
+                <a href="@Url.Action("Index", "Home")" class="logo-index"><img src="~/images/logo.png" alt="" /></a>
+            </div>
+            <nav id="easy-menu">
+                <ul class="menu-list">
+                    <li><a href="@Url.Action("About", "Home")">
+                            @Resources.Resource.gioithieu
+                            @*@if (Session["Gioithieu"] != null)
+                            {<div>@Session["Gioithieu"]</div>}
+                            else
+                            {<div>Giới thiệu</div>}*@
+                        @*Giới thiệu*@
+                        </a></li>
+                    @*<li>
+                        <a href="@Url.Action("Index", "OurJourney")">Hành trình <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="@Url.Action("Index", "OurJourney")">Journey Index</a></li>
+                            <li><a href="@Url.Action("Detail", "OurJourney")">Journey Detail</a></li>
+                        </ul>
+                    </li>*@
+                    <li>
+                        <a href="@Url.Action("Index", "OurJourney")">
+                            @Resources.Resource.hanhtrinh
+                            @*@if (Session["Hanhtrinh"] != null)
+                            {<div>@Session["Hanhtrinh"]</div>}
+                            else
+                            {<div>Hành trình</div>}*@
+                        @*Hành trình*@
+                        </a>
+                    </li>
+                    @*<li>
+                        <a href="@Url.Action("About", "News")">Tin tức mới <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="@Url.Action("Index", "News")">Tin tức</a></li>
+                            <li><a href="@Url.Action("Detail", "News")">Chi tiết tin tức</a></li>
+                        </ul>
+                    </li>*@
+                    <li>
+                        <a href="@Url.Action("Index", "News")">
+                            @Resources.Resource.tintucmoi
+                            @*@{
+                                if (Session["Tintucmoi"] != null)
+                                {<div>@Session["Tintucmoi"]</div>}
+                                else
+                                {<div>Tin tức mới</div>}
+                            }*@
+                        @*Tin tức mới*@
+                        </a>
+                    </li>
+                    @*<li>
+                        <a href="@Url.Action("Index", "Gallery")">Hình ảnh <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="@Url.Action("Index", "Gallery")">Hình ảnh</a></li>
+                            <li><a href="@Url.Action("Detail", "Gallery")">Chi tiết hình ảnh</a></li>
+                        </ul>
+                    </li>*@
+                    <li>
+                        <a href="@Url.Action("Index", "Gallery")">
+                            @Resources.Resource.hinhanh
+                            @*@if (Session["Hinhanh"] != null)
+                            {<div>@Session["Hinhanh"]</div>}
+                            else
+                            {<div>Hình ảnh</div>}*@
+                        @*Hình ảnh*@
+                        </a>
+                    </li>
+
+                    @*<li>
+                        <a href="@Url.Action("Index", "Member")">Thành viên <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="@Url.Action("Index", "Member")">Thành viên</a></li>
+                            <li><a href="@Url.Action("Detail", "Member")">Chi tiết thành viên</a></li>
+                        </ul>
+                    </li>*@
+                    <li>
+                        <a href="@Url.Action("Index", "Member")">
+                            @Resources.Resource.thanhvien
+                            @*@if (Session["Thanhvien"] != null)
+                            {<div>@Session["Thanhvien"]</div>}
+                            else
+                            {<div>Thành viên</div>}*@
+                        @*Thành viên*@
+                        </a>
+                    </li>
+                    @*<li><a href="@Url.Action("About", "Home")">Giới thiệu</a></li>*@
+                    <li><a href="@Url.Action("Contact", "Home")">
+                            @Resources.Resource.lienhe
+                            @*@if (Session["Lienhe"] != null)
+                            {<div>@Session["Lienhe"]</div>}
+                            else
+                            {<div>Liên hệ</div>}*@
+                        @*Liên hệ*@
+                        </a></li>
+                </ul>
+            </nav><!--#easy-menu-->
+
+
+            @*<div class="donate-button-wrap">
+                
+                <a href="#" class="hidden-lg hidden-md" id="humbarger-icon"><i class="fa fa-bars"></i> </a>
+            </div>
+
+            <div class="donate-button-wrap" style="margin-left:15px;">
+                <div class="donate-button-wrap" style="margin-left:15px;">
+                    <a href="@Url.Action("ChangeCulture", "Base",new { ddCul = "vi-VN",url="Home;Index" })">
+                        <img alt="" src="/images/vn.svg" width="28" height="22">
+                    </a>
+                    <a href="@Url.Action("ChangeCulture", "Base",new { ddCul = "en-US",url="Home;Index" })">
+                        <img alt="" src="/images/us.svg" width="28" height="22">
+                    </a>
+                </div>
+            </div>*@
+
+            <div class="donate-button-wrap">
+                <a href="#" class="hidden-lg hidden-md" id="humbarger-icon"><i class="fa fa-bars"></i> </a>
+            </div>
+
+            <div class="donate-button-wrap" style="margin-left:15px;">
+                <a href="@Url.Action("ChangeCulture", "Base",new { ddCul = "vi-VN",url="Home;Index" })">
+                    <img alt="" src="/images/vn.svg" width="28" height="22">
+                </a>
+                <a href="@Url.Action("ChangeCulture", "Base",new { ddCul = "en-US",url="Home;Index" })">
+                    <img alt="" src="/images/us.svg" width="28" height="22">
+                </a>
+            </div>
+
+            
+
+        </div>
+    </div>
+</div>
